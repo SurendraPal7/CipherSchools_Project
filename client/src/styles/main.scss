@@ -1,0 +1,110 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $background-dark;
+    color: $text-light;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $spacing-md;
+
+    @include tablet {
+        padding: $spacing-lg;
+    }
+}
+
+// App Header
+.app-header {
+    padding: $spacing-md $spacing-lg;
+    background: rgba($background-card, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: $gradient-primary;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.5px;
+    }
+}
+
+// Global Button Styles
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: $spacing-sm $spacing-lg;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.btn-primary {
+        background: $gradient-primary;
+        color: white;
+        box-shadow: $shadow-md;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: $shadow-glow;
+        }
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+    }
+
+    &.btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: $text-light;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $primary-color;
+}

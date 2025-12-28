@@ -1,0 +1,83 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.assignment-list {
+    h1 {
+        text-align: center;
+        margin-bottom: $spacing-xl;
+        color: $primary-color;
+    }
+
+    .loading {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: $spacing-xl;
+    }
+
+    .grid {
+        display: grid;
+        gap: $spacing-md;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .card {
+        background: lighten($background-dark, 5%);
+        padding: $spacing-lg;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: $primary-color;
+        }
+
+        h2 {
+            margin-bottom: $spacing-sm;
+            font-size: 1.25rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: $spacing-md;
+            font-weight: bold;
+
+            &::before {
+                content: 'Difficulty: ';
+                font-weight: normal;
+            }
+        }
+
+        &.easy .badge {
+            background: $success;
+            color: white;
+        }
+
+        &.medium .badge {
+            background: $warning;
+            color: $text-dark;
+        }
+
+        &.hard .badge {
+            background: $error;
+            color: white;
+        }
+
+        p {
+            color: desaturate($text-light, 20%);
+            font-size: 0.9rem;
+        }
+    }
+}

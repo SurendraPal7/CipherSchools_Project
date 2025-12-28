@@ -1,0 +1,65 @@
+// Custom "Earth & Metal" Palette
+// Provided Colors:
+// #48443c (Dark Earth)
+// #b47c2c (Golden Brown)
+// #e4ccac (Beige Cream)
+// #8c9cb4 (Steel Blue)
+// #ffe1a4 (Pale Gold)
+
+// Primary - Golden Brown
+$primary-color: #b47c2c;
+$primary-hover: #ffe1a4; // Hover becomes the Pale Gold
+
+// Secondary - Steel Blue
+$secondary-color: #8c9cb4;
+$secondary-hover: lighten(#8c9cb4, 10%);
+
+// Accents
+$accent-gold: #ffe1a4;
+
+// Backgrounds
+$background-dark: #48443c; // Main BG
+$background-card: lighten(#48443c, 5%); // Slightly lighter for cards
+$background-darker: darken(#48443c, 10%); // Darker for deep areas
+$background-hover: lighten(#48443c, 10%);
+
+// Text
+$text-light: #e4ccac; // Beige Cream for main text
+$text-muted: desaturate(darken(#e4ccac, 20%), 10%);
+$text-dark: #2d3436; // Keep dark for contrast on light buttons
+
+// Status Colors (Adapted to palette where possible, but kept functional)
+$success: #00b894; // Keep standard for semantics
+$error: #ff7675; // Keep standard for semantics
+$warning: #ffe1a4; // Use Pale Gold as warning/highlight
+$info: #8c9cb4; // Use Steel Blue for info
+
+$border-color: rgba(#e4ccac, 0.2);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, #b47c2c 0%, #ffe1a4 100%);
+$gradient-card: linear-gradient(145deg, lighten(#48443c, 7%) 0%, #48443c 100%);
+$gradient-glow: radial-gradient(circle at center, rgba(180, 124, 44, 0.3) 0%, transparent 70%);
+
+// Shadows
+$shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
+$shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5);
+$shadow-glow: 0 0 20px rgba(180, 124, 44, 0.4);
+
+// Typography
+$font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+$font-code: 'Fira Code', 'Consolas', monospace;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Breakpoints
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 641px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1281px;
